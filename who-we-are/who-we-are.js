@@ -1,4 +1,4 @@
-// Custom JavaScript for LENT WORKS LLC
+// Custom JavaScript for Who We Are Page - LENT WORKS LLC
 
 document.addEventListener("DOMContentLoaded", function () {
   // Navbar scroll effect
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle mobile menu behavior
   const navbarCollapse = document.querySelector(".navbar-collapse");
-  const navbarToggler = document.querySelector(".navbar-toggler");
 
   // Close mobile menu when clicking on regular nav links (not dropdown toggles)
   const regularNavLinks = document.querySelectorAll(
@@ -63,6 +62,98 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Add active class to current page nav link
+  const currentLocation = window.location.pathname;
+  const navLinks2 = document.querySelectorAll(".navbar-nav .nav-link");
+
+  navLinks2.forEach((link) => {
+    if (
+      link.getAttribute("href") === currentLocation ||
+      link.getAttribute("href") ===
+        currentLocation.substring(currentLocation.lastIndexOf("/") + 1)
+    ) {
+      link.classList.add("active");
+    }
+  });
+
+  // Scroll-triggered animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, observerOptions);
+
+  // Observe all content sections for animations
+  const animatedSections = document.querySelectorAll(
+    ".who-we-are-section, .platform-section, .what-we-do-section, .additional-content-section, .platform-support-section, .join-us-section"
+  );
+
+  animatedSections.forEach((section) => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "all 0.8s ease";
+    observer.observe(section);
+  });
+
+  // Join Us and Refer buttons functionality
+  const joinBtn = document.querySelector(".join-btn");
+  const referBtn = document.querySelector(".refer-btn");
+  const customBtns = document.querySelectorAll(".custom-btn");
+
+  if (joinBtn) {
+    joinBtn.addEventListener("click", function () {
+      // Add your join us functionality here
+      alert(
+        "Join Us functionality - Connect this to your application form or career page"
+      );
+    });
+  }
+
+  if (referBtn) {
+    referBtn.addEventListener("click", function () {
+      // Add your refer functionality here
+      alert("Refer Now functionality - Connect this to your referral form");
+    });
+  }
+
+  // Custom buttons functionality
+  customBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const btnText = this.textContent.trim();
+      if (btnText === "Join Us") {
+        alert(
+          "Join Us functionality - Connect this to your application form or career page"
+        );
+      } else if (btnText === "Refer now") {
+        alert("Refer Now functionality - Connect this to your referral form");
+      }
+    });
+  });
+
+  // Add hover effects for images
+  const contentImages = document.querySelectorAll(
+    ".who-we-are-image img, .platform-image img, .what-we-do-image img, .additional-image img, .join-us-image img"
+  );
+
+  contentImages.forEach((img) => {
+    img.addEventListener("mouseenter", function () {
+      this.style.transform = "scale(1.05)";
+      this.style.transition = "transform 0.3s ease";
+    });
+
+    img.addEventListener("mouseleave", function () {
+      this.style.transform = "scale(1)";
+    });
+  });
+
   // Add loading animation
   window.addEventListener("load", function () {
     document.body.classList.add("loaded");
@@ -90,17 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleResponsiveAdjustments() {
     const windowWidth = window.innerWidth;
 
-    // Adjust parallax effect based on screen size
-    if (windowWidth <= 768) {
-      // Disable parallax on mobile for better performance
-      const heroImages = document.querySelectorAll(
-        ".hero-image-left img, .hero-image-right img"
-      );
-      heroImages.forEach((img) => {
-        img.style.transform = "none";
-      });
-    }
-
     // Adjust dropdown behavior on mobile
     if (windowWidth <= 991) {
       const dropdowns = document.querySelectorAll(".dropdown");
@@ -116,45 +196,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial responsive adjustments
   handleResponsiveAdjustments();
-});
-
-// Responsive parallax effect for hero images
-window.addEventListener("scroll", function () {
-  // Only apply parallax on larger screens for better performance
-  if (window.innerWidth > 768) {
-    const scrolled = window.pageYOffset;
-    const heroImages = document.querySelectorAll(
-      ".hero-image-left img, .hero-image-right img"
-    );
-
-    heroImages.forEach((img) => {
-      const speed = 0.3; // Reduced speed for smoother effect
-      img.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-  }
-});
-
-// Intersection Observer for scroll animations (performance optimized)
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-in");
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", function () {
-  const animateElements = document.querySelectorAll(
-    ".industry-card, .value-card, .about-image, .about-content"
-  );
-
-  animateElements.forEach((el) => {
-    observer.observe(el);
-  });
 });

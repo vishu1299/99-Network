@@ -1,4 +1,4 @@
-// Custom JavaScript for LENT WORKS LLC
+// Custom JavaScript for Career Page - LENT WORKS LLC
 
 document.addEventListener("DOMContentLoaded", function () {
   // Navbar scroll effect
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle mobile menu behavior
   const navbarCollapse = document.querySelector(".navbar-collapse");
-  const navbarToggler = document.querySelector(".navbar-toggler");
 
   // Close mobile menu when clicking on regular nav links (not dropdown toggles)
   const regularNavLinks = document.querySelectorAll(
@@ -63,6 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Add active class to current page nav link
+  const currentLocation = window.location.pathname;
+  const navLinks2 = document.querySelectorAll(".navbar-nav .nav-link");
+
+  navLinks2.forEach((link) => {
+    if (
+      link.getAttribute("href") === currentLocation ||
+      link.getAttribute("href") ===
+        currentLocation.substring(currentLocation.lastIndexOf("/") + 1)
+    ) {
+      link.classList.add("active");
+    }
+  });
+
   // Add loading animation
   window.addEventListener("load", function () {
     document.body.classList.add("loaded");
@@ -90,17 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleResponsiveAdjustments() {
     const windowWidth = window.innerWidth;
 
-    // Adjust parallax effect based on screen size
-    if (windowWidth <= 768) {
-      // Disable parallax on mobile for better performance
-      const heroImages = document.querySelectorAll(
-        ".hero-image-left img, .hero-image-right img"
-      );
-      heroImages.forEach((img) => {
-        img.style.transform = "none";
-      });
-    }
-
     // Adjust dropdown behavior on mobile
     if (windowWidth <= 991) {
       const dropdowns = document.querySelectorAll(".dropdown");
@@ -116,45 +118,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial responsive adjustments
   handleResponsiveAdjustments();
-});
-
-// Responsive parallax effect for hero images
-window.addEventListener("scroll", function () {
-  // Only apply parallax on larger screens for better performance
-  if (window.innerWidth > 768) {
-    const scrolled = window.pageYOffset;
-    const heroImages = document.querySelectorAll(
-      ".hero-image-left img, .hero-image-right img"
-    );
-
-    heroImages.forEach((img) => {
-      const speed = 0.3; // Reduced speed for smoother effect
-      img.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-  }
-});
-
-// Intersection Observer for scroll animations (performance optimized)
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-in");
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", function () {
-  const animateElements = document.querySelectorAll(
-    ".industry-card, .value-card, .about-image, .about-content"
-  );
-
-  animateElements.forEach((el) => {
-    observer.observe(el);
-  });
 });
