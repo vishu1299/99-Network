@@ -14,6 +14,9 @@
   animation: dropdownFadeIn 0.3s ease forwards;
   padding: 10px 0;
 }
+body {
+  background: #001f33;
+}
 
 @keyframes dropdownFadeIn {
   from {
@@ -396,7 +399,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/images/who-are-we-hero.png");
+  background-image: url("/images/services-hero.png");
   background-size: 100% 100%;
   margin: 0;
   padding: 0;
@@ -440,15 +443,236 @@ body {
   line-height: 1.3;
 }
 
-/* Ensure no spacing issues */
-.hero-section + * {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+/* Services Content Section */
+.services-content-section {
+  background: #001f33;
+  padding: 120px 0 140px;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffea00;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.title-divider {
+  width: 550px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  margin-bottom: 80px;
+}
+
+/* Service Main Description */
+.service-main-description {
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.service-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.service-text p {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.text-highlight {
+  color: #487fff;
+  font-weight: 600;
+}
+
+.service-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Program Details Section */
+.program-details-section {
+  text-align: center;
+  margin-bottom: 100px;
+  padding: 80px 0;
+  background: #487fff1a;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 100% !important;
+}
+
+.program-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffea00;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.program-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: white;
+  margin-bottom: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.read-more-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.read-more-link:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.read-more-link i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-link:hover i {
+  transform: translateX(5px);
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  margin-bottom: 100px;
+  padding-top: 40px;
+}
+
+.section-subtitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffea00;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.steps-row {
+  margin-bottom: 40px;
+}
+
+.steps-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Step Cards */
+.step-card {
+  background: #487fff1a;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: left;
+  height: 100%;
+  min-height: 200px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  background: #487fff2a;
+  border-color: rgba(72, 127, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(72, 127, 255, 0.15);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #487fff1a;
+  color: #487fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-top: 0;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+/* Closing Statement */
+.closing-statement {
+  text-align: center;
+  padding: 60px 40px;
+  background: #487fff1a;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.closing-statement p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Footer Section */
 .footer-section {
-  background: linear-gradient(135deg, #154667 0%, #001f33 100%);
+  background: #001f33;
   padding: 60px 0 30px;
   color: #ffffff;
   position: relative;
@@ -621,6 +845,27 @@ body {
   .hero-subtitle {
     font-size: 1.8rem;
   }
+
+  /* Services Content Responsive */
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .title-divider {
+    width: 600px;
+  }
+
+  .service-title {
+    font-size: 2rem;
+  }
+
+  .program-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -634,6 +879,78 @@ body {
 
   .navbar-nav .nav-link {
     margin: 0.2rem 0;
+  }
+
+  /* Services Content Medium Screens */
+  .services-content-section {
+    padding: 80px 0 100px;
+  }
+
+  .hero-section + .services-content-section {
+    margin-top: 60px;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .title-divider {
+    width: 400px;
+  }
+
+  .service-main-description {
+    margin-bottom: 80px;
+  }
+
+  .service-title {
+    font-size: 1.8rem;
+  }
+
+  .service-text {
+    padding-right: 0;
+  }
+
+  .service-image {
+    padding-left: 0;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .program-details-section {
+    margin-bottom: 80px;
+    padding: 60px 20px;
+  }
+
+  .program-title {
+    font-size: 2rem;
+  }
+
+  .how-it-works-section {
+    margin-bottom: 80px;
+    padding-top: 30px;
+  }
+
+  .section-subtitle {
+    font-size: 2.2rem;
+  }
+
+  .step-card {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .closing-statement {
+    padding: 40px 20px;
   }
 }
 
@@ -698,6 +1015,96 @@ body {
   .contact-icon {
     align-self: center;
   }
+
+  /* Services Content Mobile */
+  .services-content-section {
+    padding: 60px 0 80px;
+  }
+
+  .hero-section + .services-content-section {
+    margin-top: 40px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .title-divider {
+    width: 250px;
+  }
+
+  .service-main-description {
+    margin-bottom: 60px;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .service-text {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+
+  .service-image {
+    padding-left: 0;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .program-details-section {
+    margin-bottom: 40px;
+    padding: 30px 15px;
+  }
+
+  .program-title {
+    font-size: 1.6rem;
+  }
+
+  .program-description {
+    font-size: 1rem;
+  }
+
+  .how-it-works-section {
+    margin-bottom: 40px;
+  }
+
+  .section-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .step-card {
+    padding: 25px 15px;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+
+  .closing-statement {
+    padding: 30px 15px;
+  }
+
+  .closing-statement p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -731,5 +1138,44 @@ body {
 
   .footer-title {
     font-size: 1.1rem;
+  }
+
+  /* Services Content Extra Small */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .title-divider {
+    width: 200px;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+  }
+
+  .program-title {
+    font-size: 1.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+  }
+
+  .step-description {
+    font-size: 0.85rem;
+  }
+
+  .closing-statement p {
+    font-size: 1rem;
   }
 }

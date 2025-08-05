@@ -579,7 +579,7 @@ body {
 
 /* Footer Section */
 .footer-section {
-  background: linear-gradient(135deg, #154667 0%, #001f33 100%);
+  background: #001f33;
   padding: 60px 0 30px;
   color: #ffffff;
   position: relative;

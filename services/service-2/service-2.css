@@ -1,5 +1,3 @@
-/* CSS Variables */
-
 /* Dropdown Menu Styling */
 .dropdown-menu {
   background: rgba(0, 0, 0, 0.95);
@@ -13,6 +11,9 @@
   transition: all 0.3s ease;
   animation: dropdownFadeIn 0.3s ease forwards;
   padding: 10px 0;
+}
+body {
+  background-color: #001f33;
 }
 
 @keyframes dropdownFadeIn {
@@ -396,7 +397,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/images/who-are-we-hero.png");
+  background-image: url("/images/services-hero.png");
   background-size: 100% 100%;
   margin: 0;
   padding: 0;
@@ -442,13 +443,93 @@ body {
 
 /* Ensure no spacing issues */
 .hero-section + * {
-  margin-top: 0 !important;
+  margin-top: 100px !important;
   padding-top: 0 !important;
+}
+
+/* Services Content Section */
+.services-content-section {
+  background: #001f33;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffea00;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.title-divider {
+  width: 550px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  margin-bottom: 80px;
+}
+
+/* Service Main Description */
+.service-main-description {
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.service-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.service-text p {
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.service-text p:last-child {
+  margin-bottom: 0;
+}
+
+.text-highlight {
+  color: #487fff;
+  font-weight: 600;
+}
+
+.service-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+  height: 100%;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* Footer Section */
 .footer-section {
-  background: linear-gradient(135deg, #154667 0%, #001f33 100%);
+  background: #001f33;
   padding: 60px 0 30px;
   color: #ffffff;
   position: relative;
@@ -621,6 +702,31 @@ body {
   .hero-subtitle {
     font-size: 1.8rem;
   }
+
+  .services-content-section {
+    padding: 200px 0 120px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .title-divider {
+    width: 450px;
+  }
+
+  .service-title {
+    font-size: 1.6rem;
+  }
+
+  .service-text {
+    font-size: 1rem;
+    padding-right: 20px;
+  }
+
+  .service-image {
+    padding-left: 30px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -634,6 +740,42 @@ body {
 
   .navbar-nav .nav-link {
     margin: 0.2rem 0;
+  }
+
+  .services-content-section {
+    padding: 150px 0 100px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .title-divider {
+    width: 350px;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+  }
+
+  .service-text {
+    font-size: 0.95rem;
+    padding-right: 15px;
+  }
+
+  .service-image {
+    padding-left: 20px;
+    margin-top: 30px;
+  }
+
+  .dropdown-menu {
+    min-width: 280px;
+  }
+
+  .services-dropdown,
+  .industries-dropdown,
+  .technologies-dropdown {
+    min-width: 300px;
   }
 }
 
@@ -655,9 +797,69 @@ body {
     font-size: 1.4rem;
   }
 
+  .hero-content {
+    padding: 1rem;
+  }
+
   .transparent-header {
-    background: rgba(0, 0, 0, 0.95) !important;
     padding: 0.5rem 0;
+  }
+
+  .services-content-section {
+    padding: 100px 0 80px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .title-divider {
+    width: 250px;
+    margin: 0 auto 60px;
+  }
+
+  .service-main-description {
+    margin-bottom: 60px;
+    padding: 0 15px;
+  }
+
+  .service-title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .service-text {
+    font-size: 0.9rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .service-image {
+    padding-left: 0;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    min-width: 250px;
+  }
+
+  .services-dropdown,
+  .industries-dropdown,
+  .technologies-dropdown {
+    min-width: 280px;
+    max-height: 250px;
+  }
+
+  .faq-dropdown {
+    min-width: 250px;
+    max-height: 200px;
   }
 
   /* Footer Mobile */
@@ -702,11 +904,87 @@ body {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
     font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 0.5rem;
+  }
+
+  .services-content-section {
+    padding: 80px 0 60px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .title-divider {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+
+  .service-main-description {
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .service-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .service-text p {
+    margin-bottom: 20px;
+  }
+
+  .dropdown-menu {
+    min-width: 220px;
+  }
+
+  .services-dropdown,
+  .industries-dropdown,
+  .technologies-dropdown {
+    min-width: 250px;
+    max-height: 200px;
+  }
+
+  .faq-dropdown {
+    min-width: 220px;
+    max-height: 180px;
+  }
+
+  .dropdown-header {
+    font-size: 0.9rem;
+    padding: 10px 15px 12px 15px;
+  }
+
+  .services-dropdown .dropdown-item,
+  .dropdown-item-text {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  .option-item label {
+    font-size: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-outline-light {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 120px;
   }
 
   /* Footer Extra Small */
@@ -731,5 +1009,225 @@ body {
 
   .footer-title {
     font-size: 1.1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .services-content-section {
+    padding: 60px 0 40px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .title-divider {
+    width: 150px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-text {
+    font-size: 0.8rem;
+  }
+
+  .dropdown-menu {
+    min-width: 200px;
+  }
+
+  .services-dropdown,
+  .industries-dropdown,
+  .technologies-dropdown {
+    min-width: 220px;
+  }
+
+  .faq-dropdown {
+    min-width: 200px;
+  }
+}
+
+/* platform */
+
+/* Platform Section */
+.platform-section {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  margin: 120px 80px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-section .container-fluid {
+  padding: 0 !important;
+  margin: 0;
+  max-width: 100%;
+}
+
+.platform-section .row {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  min-height: 400px;
+  align-items: center;
+}
+
+.platform-section .col-lg-7,
+.platform-section .col-lg-5 {
+  padding: 0;
+}
+
+.platform-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  background: var(--primary-blue-blue-10, #487fff1a);
+  z-index: 1;
+}
+
+.platform-content {
+  padding: 60px;
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.platform-section .section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffea00;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.platform-section .section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-align: justify;
+}
+
+.platform-section .highlight-text {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.platform-image {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.platform-section .platform-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Sections Responsive Design */
+@media (max-width: 991px) {
+  .platform-section::before {
+    width: 100%;
+  }
+
+  .platform-section .row {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .platform-content {
+    padding: 60px 40px;
+    order: 1;
+  }
+
+  .platform-image {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .platform-section .platform-image img {
+    height: 250px;
+  }
+
+  .platform-section .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-section {
+    padding: 0;
+    margin: 40px 20px;
+  }
+
+  .platform-section .row {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .platform-content {
+    padding: 50px 30px;
+    order: 1;
+  }
+
+  .platform-image {
+    order: 2;
+  }
+
+  .platform-section .platform-image img {
+    height: 220px;
+  }
+
+  .platform-section .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .platform-section {
+    padding: 0;
+    margin: 20px 10px;
+  }
+
+  .platform-content {
+    padding: 40px 20px;
+  }
+
+  .platform-section .platform-image img {
+    height: 200px;
+  }
+
+  .platform-section .section-title {
+    font-size: 1.6rem;
+  }
+
+  .platform-section .section-text {
+    font-size: 0.95rem;
   }
 }

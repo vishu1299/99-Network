@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
   regularNavLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
         bsCollapse.hide();
       }
     });
@@ -49,30 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
   dropdownItems.forEach((item) => {
     item.addEventListener("click", () => {
       if (navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
         bsCollapse.hide();
       }
-    });
-  });
-
-  // Prevent navbar from closing when clicking inside dropdown menu
-  const dropdownMenus = document.querySelectorAll(".dropdown-menu");
-  dropdownMenus.forEach((menu) => {
-    menu.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  });
-
-  // Add loading animation
-  window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
-  });
-
-  // Responsive image loading optimization
-  const images = document.querySelectorAll("img");
-  images.forEach((img) => {
-    img.addEventListener("load", function () {
-      this.classList.add("loaded");
     });
   });
 
@@ -81,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
-      // Trigger any responsive adjustments here
       handleResponsiveAdjustments();
     }, 250);
   });
@@ -100,18 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         img.style.transform = "none";
       });
     }
-
-    // Adjust dropdown behavior on mobile
-    if (windowWidth <= 991) {
-      const dropdowns = document.querySelectorAll(".dropdown");
-      dropdowns.forEach((dropdown) => {
-        dropdown.addEventListener("click", function (e) {
-          if (e.target.classList.contains("dropdown-toggle")) {
-            e.preventDefault();
-          }
-        });
-      });
-    }
   }
 
   // Initial responsive adjustments
@@ -120,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Responsive parallax effect for hero images
 window.addEventListener("scroll", function () {
-  // Only apply parallax on larger screens for better performance
   if (window.innerWidth > 768) {
     const scrolled = window.pageYOffset;
     const heroImages = document.querySelectorAll(
@@ -128,13 +97,13 @@ window.addEventListener("scroll", function () {
     );
 
     heroImages.forEach((img) => {
-      const speed = 0.3; // Reduced speed for smoother effect
+      const speed = 0.3;
       img.style.transform = `translateY(${scrolled * speed}px)`;
     });
   }
 });
 
-// Intersection Observer for scroll animations (performance optimized)
+// Intersection Observer for scroll animations
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
